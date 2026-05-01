@@ -1,5 +1,5 @@
 [user]
-	email = robert@robertjacobsen.net
+	email = robert@robertjacobsen.no
 	name = Robert Jacobsen
 [core]
 	editor = vim
@@ -23,3 +23,5 @@
 	whitespace = fix
 [branch]
 	autosetuprebase = remote
+[init]
+	defaultBranch = main
