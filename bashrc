@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+CONFIGS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
@@ -24,7 +26,7 @@ current_directory_short() {
     echo $PWD | perl -e'$p=<STDIN>;$p=~s{^/(Users|home)/[^/]+}{~};@a=split/\//,$p;@c=();@b=@a>1?reverse(pop@a,pop@a):();for(@a){push@c,substr($_,0,1);}push@c,@b;print join"/",@c;'
 }
 
-. ~/configs/colors
+. ~/$CONFIGS_DIR/colors
 PS1="\[$RESET$BOLD\][\$([[ \"$SHOWHOST\" -ge 1 ]] && echo -n $HOSTNAME)\[$RESET\]\$([[ \"$SHOWHOST\" -ge 1 ]] && echo -n ':')\[$PSCOLOR\]\$(current_directory_short)\[$RESET$BOLD\]]\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]\$ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
@@ -41,10 +43,10 @@ echo -ne "\033]0;$HOSTNAME\007"
 export LC_ALL=en_US.UTF-8
 
 # Load aliases
-. ~/configs/aliases
+. ~/$CONFIGS_DIR/aliases
 
 # Load git auto-completion
-. ~/configs/git-completion.bash
+. ~/$CONFIGS_DIR/git-completion.bash
 
 # Fix PATH for homebrew
 PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:${PATH}
