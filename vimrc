@@ -1,9 +1,6 @@
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
-let g:CommandTMaxDepth=50
-let g:CommandTMaxFiles=1000000
-
 syn on
 filetype plugin indent on
 set number
@@ -32,8 +29,6 @@ map :Q :q
 map :W :w
 map < :tabnext<cr>
 map > :tabprev<cr>
-map <C-t> :CommandT<cr>
-map <C-b> :CommandTBuffer<cr>
 set hlsearch
 set incsearch
 set nowrap
@@ -51,6 +46,7 @@ hi SpecialKey guifg=#ffffff guibg=#cc0000 ctermfg=white ctermbg=red
 augroup filetype
     au  BufRead,BufNewFile *.tt             set filetype=html
     au  BufRead,BufNewFile *.tpl            set filetype=html
+    au  BufRead,BufNewFile *.hbs            set filetype=html
     au  BufRead,BufNewFile *.more           set filetype=less
     au  BufRead,BufNewFile *.less           set filetype=less
     au  BufRead,BufNewFile *.ep             set filetype=html
