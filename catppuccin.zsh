@@ -1,8 +1,8 @@
 # Catppuccin palettes for zsh
 # Set CATPPUCCIN_FLAVOR to one of: latte, frappe, macchiato, mocha
-# Defaults to mocha if unset.
+# Defaults to macchiato if unset.
 
-: ${CATPPUCCIN_FLAVOR:=mocha}
+: ${CATPPUCCIN_FLAVOR:=macchiato}
 
 typeset -gA catppuccin
 
