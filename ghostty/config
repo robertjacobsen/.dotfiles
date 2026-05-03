@@ -1,4 +1,4 @@
-theme = catppuccin-macchiato.conf
+theme = light:catppuccin-latte,dark:catppuccin-macchiato
 background-blur-radius = 20
 mouse-hide-while-typing = true
 window-decoration = true
