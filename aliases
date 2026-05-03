@@ -29,4 +29,4 @@ alias vim='nvim'
 alias zr='exec zsh'
 
 alias grep='grep --color=auto'
-alias ls='ls -G'
+alias ls='ls --color=auto'
