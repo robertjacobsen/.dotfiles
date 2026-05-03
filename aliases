@@ -28,30 +28,5 @@ alias gst='git status'
 alias vim='nvim'
 alias zr='exec zsh'
 
-alias fu='kill'
-alias fuu='kill -9'
-alias fuuu='killall'
-alias fuuuu='killall -9'
-
-# Why yes, my dear Pakleds, we can make colours go.
 alias grep='grep --color=auto'
-UNAME=`uname`
-if [ "$UNAME" != "Darwin" ]; then
-    alias ls='ls --color=auto'
-else
-    alias ls='ls -G'
-fi
-
-count-folder-files() {
-    OIFS=$IFS
-    IFS=$'\n'
-    for p in `ls -1`; do
-        echo "$p: `find "$p" | wc -l`"
-    done
-    IFS=$OIFS
-}
-
-
-if [ -f ~/configs/custom_aliases ]; then
-    . ~/configs/custom_aliases;
-fi
+alias ls='ls -G'
