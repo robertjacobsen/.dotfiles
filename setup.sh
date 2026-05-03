@@ -19,11 +19,11 @@ mv .vim .bak
 mv .vimrc .bak
 
 echo "Linking config files..."
-ln -s $CONFIGS/bashrc ~/$BASHRC
-ln -s $CONFIGS/p10k.zsh ~/.p10k.zsh
-ln -s $CONFIGS/zshrc ~/.zshrc
-ln -s $CONFIGS/gitconfig ~/.gitconfig
-ln -s $CONFIGS/vim ~/.vim
-ln -s $CONFIGS/vimrc ~/.vimrc
+ln -sf $CONFIGS/bashrc ~/$BASHRC
+ln -sf $CONFIGS/p10k.zsh ~/.p10k.zsh
+ln -sf $CONFIGS/zshrc ~/.zshrc
+ln -sf $CONFIGS/gitconfig ~/.gitconfig
+ln -sf $CONFIGS/vim ~/.vim
+ln -sf $CONFIGS/vimrc ~/.vimrc
 
 echo "Done. Please relog into your shell."
