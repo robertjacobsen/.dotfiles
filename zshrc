@@ -16,8 +16,13 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Add in Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-# Default flavor; override by writing a flavor name (latte/frappe/macchiato/mocha) to catppuccin_flavor
+# Auto-follow macOS appearance with dark-mode
 CATPPUCCIN_FLAVOR=macchiato
+if command -v dark-mode &>/dev/null; then
+  [[ $(dark-mode status) == on ]] && CATPPUCCIN_FLAVOR=macchiato || CATPPUCCIN_FLAVOR=latte
+fi
+
+# Override by writing a flavor name (latte/frappe/macchiato/mocha) to catppuccin_flavor
 [[ -f $DOTFILES/catppuccin_flavor ]] && CATPPUCCIN_FLAVOR=$(<$DOTFILES/catppuccin_flavor)
 CATPPUCCIN_FLAVOR=${CATPPUCCIN_FLAVOR}
 
