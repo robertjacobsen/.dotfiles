@@ -1,5 +1,5 @@
 #!/bin/bash
-CONFIGS=$(dirname $0)
+DOTFILES=$(cd "$(dirname "$0")" && pwd)
 ARCH=$(uname)
 BASHRC=".bashrc"
 if [[ "$ARCH" = "Darwin" ]]; then
@@ -19,11 +19,12 @@ mv .vim .bak
 mv .vimrc .bak
 
 echo "Linking config files..."
-ln -sf $CONFIGS/bashrc ~/$BASHRC
-ln -sf $CONFIGS/p10k.zsh ~/.p10k.zsh
-ln -sf $CONFIGS/zshrc ~/.zshrc
-ln -sf $CONFIGS/gitconfig ~/.gitconfig
-ln -sf $CONFIGS/vim ~/.vim
-ln -sf $CONFIGS/vimrc ~/.vimrc
+ln -sf $DOTFILES/bashrc $HOME/$BASHRC
+ln -sf $DOTFILES/p10k.zsh $HOME/.p10k.zsh
+ln -sf $DOTFILES/zshrc $HOME/.zshrc
+ln -sf $DOTFILES/gitconfig $HOME/.gitconfig
+ln -sf $DOTFILES/vim $HOME/.vim
+ln -sf $DOTFILES/vimrc $HOME/.vimrc
+ln -sf $DOTFILES/ghostty $HOME/.config/ghostty
 
 echo "Done. Please relog into your shell."

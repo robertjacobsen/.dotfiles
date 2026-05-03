@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-CONFIGS_DIR=${${(%):-%x}:A:h}
+DOTFILES=${${(%):-%x}:A:h}
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -18,10 +18,10 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Default flavor; override by writing a flavor name (latte/frappe/macchiato/mocha) to catppuccin_flavor
 CATPPUCCIN_FLAVOR=macchiato
-[[ -f $CONFIGS_DIR/catppuccin_flavor ]] && CATPPUCCIN_FLAVOR=$(<$CONFIGS_DIR/catppuccin_flavor)
+[[ -f $DOTFILES/catppuccin_flavor ]] && CATPPUCCIN_FLAVOR=$(<$DOTFILES/catppuccin_flavor)
 CATPPUCCIN_FLAVOR=${CATPPUCCIN_FLAVOR}
 
-source $CONFIGS_DIR/catppuccin.zsh
+source $DOTFILES/catppuccin.zsh
 zinit snippet https://github.com/catppuccin/zsh-syntax-highlighting/raw/main/themes/catppuccin_${CATPPUCCIN_FLAVOR}-zsh-syntax-highlighting.zsh
 
 # Add in zsh plugins
@@ -81,8 +81,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-[[ -f $CONFIGS_DIR/aliases ]] && source $CONFIGS_DIR/aliases
-[[ -f $CONFIGS_DIR/custom_aliases ]] && source $CONFIGS_DIR/custom_aliases
+[[ -f $DOTFILES/aliases ]] && source $DOTFILES/aliases
+[[ -f $DOTFILES/custom_aliases ]] && source $DOTFILES/custom_aliases
 
 # Shell integrations
 eval "$(fzf --zsh)"
