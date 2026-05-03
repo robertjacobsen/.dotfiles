@@ -26,6 +26,7 @@ alias gsm='git submodule'
 alias gsmu='git submodule update'
 alias gst='git status'
 alias vim='nvim'
+alias zr='exec zsh'
 
 alias fu='kill'
 alias fuu='kill -9'
@@ -54,4 +55,3 @@ count-folder-files() {
 if [ -f ~/configs/custom_aliases ]; then
     . ~/configs/custom_aliases;
 fi
-
