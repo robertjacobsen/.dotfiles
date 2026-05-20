@@ -91,6 +91,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Shell integrations
 eval "$(fzf --zsh)"
+eval "$(mise activate zsh)"
 
 # Local, untracked overrides (machine-specific, work-specific, etc.)
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
