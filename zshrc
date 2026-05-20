@@ -85,10 +85,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
-[[ -f $DOTFILES/aliases ]] && source $DOTFILES/aliases
-[[ -f $DOTFILES/custom_aliases ]] && source $DOTFILES/custom_aliases
-
 path=("$HOME/.local/bin" $path)
 
 # Shell integrations
@@ -97,3 +93,7 @@ eval "$(mise activate zsh)"
 
 # Local, untracked overrides (machine-specific, work-specific, etc.)
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
+
+# Aliases
+[[ -f $DOTFILES/aliases.zsh ]] && source $DOTFILES/aliases.zsh
+[[ -f $DOTFILES/custom_aliases.zsh ]] && source $DOTFILES/custom_aliases.zsh
