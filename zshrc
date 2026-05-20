@@ -89,6 +89,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 [[ -f $DOTFILES/aliases ]] && source $DOTFILES/aliases
 [[ -f $DOTFILES/custom_aliases ]] && source $DOTFILES/custom_aliases
 
+path=("$HOME/.local/bin" $path)
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(mise activate zsh)"
