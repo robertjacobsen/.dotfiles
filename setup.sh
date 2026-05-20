@@ -18,6 +18,7 @@ mv "$BASHRC" "$BACKUP_DIR"
 mv "$HOME/.gitconfig" "$BACKUP_DIR"
 mv "$HOME/.vim" "$BACKUP_DIR"
 mv "$HOME/.vimrc" "$BACKUP_DIR"
+mv "$HOME/.config/ghostty" "$BACKUP_DIR"
 
 echo "Linking config files..."
 ln -sf "$DOTFILES/bashrc" "$HOME/$BASHRC"
