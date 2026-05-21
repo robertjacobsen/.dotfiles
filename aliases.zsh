@@ -49,8 +49,5 @@ grall() {
   local forgejo_url="$FORGEJO_USER/$repo.git"
 
   git remote add all "$github_url"
-  git remote set-url --add --push all "$github_url"
   git remote set-url --add --push all "$forgejo_url"
-
-  git remote -v | grep '^all'
 }
