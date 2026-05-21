@@ -95,5 +95,6 @@ eval "$(mise activate zsh)"
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 
 # Aliases
+[[ -f $DOTFILES/functions.zsh ]] && source $DOTFILES/functions.zsh
 [[ -f $DOTFILES/aliases.zsh ]] && source $DOTFILES/aliases.zsh
 [[ -f $DOTFILES/custom_aliases.zsh ]] && source $DOTFILES/custom_aliases.zsh
