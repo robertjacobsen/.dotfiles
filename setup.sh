@@ -28,5 +28,6 @@ ln -sf "$DOTFILES/gitconfig" "$HOME/.gitconfig"
 ln -sf "$DOTFILES/vim" "$HOME/.vim"
 ln -sf "$DOTFILES/vimrc" "$HOME/.vimrc"
 ln -sf "$DOTFILES/ghostty" "$HOME/.config/ghostty"
+ln -sf "$DOTFILES/tmux.conf" "$HOME/.tmux.conf"
 
 echo "Done. Please relog into your shell."
