@@ -17,10 +17,21 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Auto-follow macOS appearance with dark-mode
-CATPPUCCIN_FLAVOR=macchiato
+DISPLAY_MODE=dark
 if command -v dark-mode &>/dev/null; then
-  [[ $(dark-mode status) == on ]] && CATPPUCCIN_FLAVOR=macchiato || CATPPUCCIN_FLAVOR=latte
+  [[ $(dark-mode status) == on ]] && DISPLAY_MODE=dark || DISPLAY_MODE=light
 fi
+
+# Override by writing "dark" or "light" to force_display_mode (see zfm).
+# Empty, missing, or any other value follows the system.
+if [[ -f $DOTFILES/force_display_mode ]]; then
+  case "$(<$DOTFILES/force_display_mode)" in
+    dark)  DISPLAY_MODE=dark ;;
+    light) DISPLAY_MODE=light ;;
+  esac
+fi
+
+[[ $DISPLAY_MODE == dark ]] && CATPPUCCIN_FLAVOR=macchiato || CATPPUCCIN_FLAVOR=latte
 
 # Override by writing a flavor name (latte/frappe/macchiato/mocha) to catppuccin_flavor
 [[ -f $DOTFILES/catppuccin_flavor ]] && CATPPUCCIN_FLAVOR=$(<$DOTFILES/catppuccin_flavor)

@@ -1,3 +1,29 @@
+# Force the display mode (dark/light) or fall back to the system, then reload.
+zfm() {
+  if [[ $# -eq 0 ]]; then
+    local forced=""
+    [[ -f $DOTFILES/force_display_mode ]] && forced=$(<$DOTFILES/force_display_mode)
+    case "$forced" in
+      dark|light) echo "$forced (forced)" ;;
+      *)          echo "$CATPPUCCIN_FLAVOR (system)" ;;
+    esac
+    return 0
+  fi
+  case "$1" in
+    dark|light)
+      print -r -- "$1" > "$DOTFILES/force_display_mode"
+      ;;
+    system)
+      rm -f "$DOTFILES/force_display_mode"
+      ;;
+    *)
+      echo "usage: zfm [dark|light|system]" >&2
+      return 1
+      ;;
+  esac
+  exec zsh
+}
+
 grall() {
   local repo="${1:-$(basename "$PWD")}"
   repo="${repo%.git}"
