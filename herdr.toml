@@ -1,7 +1,13 @@
 onboarding = false
 [ui]
 sidebar_collapsed_mode = "hidden"
-sidebar_start_collapsed = "true"
+sidebar_start_collapsed = true
+
+[keys]
+focus_pane_left = ["prefix+h", "prefix+left"]
+focus_pane_down = ["prefix+j", "prefix+down"]
+focus_pane_up = ["prefix+k", "prefix+up"]
+focus_pane_right = ["prefix+l", "prefix+right"]
 
 [theme]
 name = "catppuccin-latte"
