@@ -3,8 +3,14 @@ background-blur-radius = 20
 mouse-hide-while-typing = true
 window-decoration = true
 background-opacity = 0.9
-font-family = SF Mono
+font-family = JetBrains Mono NL
 font-size = 12
 adjust-cell-height = 14
 cursor-style = block
 shell-integration-features = no-cursor
+
+# Optional, machine-local overrides written by ghst. Must stay last so they win
+# over the values set above.
+config-file = ?theme-override
+config-file = ?font-override
+config-file = ?size-override

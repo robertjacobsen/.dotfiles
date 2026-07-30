@@ -10,5 +10,5 @@ focus_pane_up = ["prefix+k", "prefix+up"]
 focus_pane_right = ["prefix+l", "prefix+right"]
 
 [theme]
-name = "catppuccin-latte"
+name = "catppuccin"
 auto_switch = false

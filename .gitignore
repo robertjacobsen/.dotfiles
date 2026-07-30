@@ -1,5 +1,8 @@
 custom_aliases
 catppuccin_flavor
 force_display_mode
+ghostty/theme-override
+ghostty/font-override
+ghostty/size-override
 vim/.netrwhist
 .bak
