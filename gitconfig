@@ -26,4 +26,4 @@
 [init]
 	defaultBranch = main
 [credential]
-        helper = cache
+	helper = store
